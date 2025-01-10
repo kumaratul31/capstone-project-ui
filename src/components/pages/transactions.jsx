@@ -7,6 +7,9 @@ const Transactions = () => {
             <Typography variant="h3" gutterBottom>
                 Card Transactions
             </Typography>
+            <p>
+                Team3 to add Top x transactions from all Cards here...
+            </p>
         </Box>
     );
 };
