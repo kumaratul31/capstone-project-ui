@@ -1,6 +1,6 @@
 import { Link, Typography } from '@mui/material';
 
-export const Footer = (props) => {
+const Footer = (props) => {
     return (
         <Typography variant="body2" color="primary" sx={{ bottom: 0, width: "100%" }} {...props}>
             {'Copyright © '}
@@ -11,3 +11,5 @@ export const Footer = (props) => {
         </Typography>
     );
 }
+
+export default Footer;
