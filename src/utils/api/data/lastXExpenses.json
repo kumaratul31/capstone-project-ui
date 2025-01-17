@@ -1,0 +1,32 @@
+[
+  {
+    "credit_card": "PjJpNKFOtkr18f2X4Xq7GTS2xaZ/GvRXpNn2P+QDLk8l14xn4Xja+QYmULE06gxl",
+    "transactions": [
+      {
+        "month": "DEC",
+        "amount": 6872.46,
+        "description": "Electronics"
+      }
+    ]
+  },
+  {
+    "credit_card": "UIg3VyYFSA86Hy+ZKZNZC53I5Rp86Xg+a9V9InuTC60VzOW61+O+cM/6gZNwJfkh",
+    "transactions": [
+      {
+        "month": "NOV",
+        "amount": 1235.92,
+        "description": "Food"
+      }
+    ]
+  },
+  {
+    "credit_card": "QJ681fcO7o5ABZg6FXiENx4toBi8cqllUrRRS2MldLafgv+FvRQntgODiKZbqp2/",
+    "transactions": [
+      {
+        "month": "NOV",
+        "amount": 125.92,
+        "description": "Food"
+      }
+    ]
+  }
+]

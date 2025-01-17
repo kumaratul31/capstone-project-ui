@@ -1,0 +1,22 @@
+{
+  "id": "6739e4e77544f601a61c7129",
+  "username": "achilleyb",
+  "password": "$2a$12$x/G8rsZs/cHMEL0U6Ist2.jNmlTZRzXNOUtOSb/vSTeImqA0bOKLG",
+  "name": {
+    "first": "Baldwin",
+    "last": "Mewhirter"
+  },
+  "dob": "10/16/2007",
+  "sex": "Female",
+  "email": "mbaden19@guardian.co.uk",
+  "customerId": 76795327,
+  "address": {
+    "street": "3781 Clemons Park",
+    "city": "Oklahoma City",
+    "state": "Oklahoma",
+    "zip": 73129,
+    "country": "United States"
+  },
+  "active": true,
+  "createdAt": "2024-10-27T00:00:00.000+00:00"
+}

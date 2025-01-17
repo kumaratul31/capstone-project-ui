@@ -24,7 +24,6 @@ const Sidebar = () => {
                 color: 'grey.700',
                 display: 'flex',
                 flexDirection: 'column',
-                ml: 0,
                 gap: 1,
                 width: '100%',
             }}

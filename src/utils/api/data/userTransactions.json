@@ -1,0 +1,141 @@
+{
+  "id": "6739f28c7544f601a61c80ab",
+  "username": "achilleyb",
+  "creditcards": [
+    {
+      "creditCardId": 1,
+      "transactions": [
+        {
+          "transactionId": "7884806127",
+          "transactionDate": "2024-06-13T18:30:00.000+00:00",
+          "transactionTime": "8:15 AM",
+          "transactionType": "cr",
+          "transactionAmount": 240082.03,
+          "transactionDesc": "Clothing"
+        },
+        {
+          "transactionId": "7884806128",
+          "transactionDate": "2024-07-10T14:20:00.000+00:00",
+          "transactionTime": "2:20 PM",
+          "transactionType": "db",
+          "transactionAmount": 1299.99,
+          "transactionDesc": "Electronics"
+        },
+        {
+          "transactionId": "7884806129",
+          "transactionDate": "2024-07-25T11:30:00.000+00:00",
+          "transactionTime": "11:30 AM",
+          "transactionType": "cr",
+          "transactionAmount": 500.00,
+          "transactionDesc": "Books"
+        },
+        {
+          "transactionId": "7884806130",
+          "transactionDate": "2024-08-01T10:45:00.000+00:00",
+          "transactionTime": "10:45 AM",
+          "transactionType": "db",
+          "transactionAmount": 79.99,
+          "transactionDesc": "Streaming Service"
+        },
+        {
+          "transactionId": "7884806131",
+          "transactionDate": "2024-09-05T16:00:00.000+00:00",
+          "transactionTime": "4:00 PM",
+          "transactionType": "cr",
+          "transactionAmount": 3000.00,
+          "transactionDesc": "Furniture Purchase"
+        }
+      ]
+    },
+    {
+      "creditCardId": 2,
+      "transactions": [
+        {
+          "transactionId": "7884806132",
+          "transactionDate": "2024-08-01T11:00:00.000+00:00",
+          "transactionTime": "11:00 AM",
+          "transactionType": "cr",
+          "transactionAmount": 50000.00,
+          "transactionDesc": "Groceries"
+        },
+        {
+          "transactionId": "7884806133",
+          "transactionDate": "2024-08-05T10:30:00.000+00:00",
+          "transactionTime": "10:30 AM",
+          "transactionType": "db",
+          "transactionAmount": 250.00,
+          "transactionDesc": "Fuel"
+        },
+        {
+          "transactionId": "7884806134",
+          "transactionDate": "2024-08-10T13:15:00.000+00:00",
+          "transactionTime": "1:15 PM",
+          "transactionType": "cr",
+          "transactionAmount": 1200.00,
+          "transactionDesc": "Utility Bill Payment"
+        },
+        {
+          "transactionId": "7884806135",
+          "transactionDate": "2024-08-20T17:00:00.000+00:00",
+          "transactionTime": "5:00 PM",
+          "transactionType": "db",
+          "transactionAmount": 850.00,
+          "transactionDesc": "Office Supplies"
+        },
+        {
+          "transactionId": "7884806136",
+          "transactionDate": "2024-09-01T09:45:00.000+00:00",
+          "transactionTime": "9:45 AM",
+          "transactionType": "cr",
+          "transactionAmount": 15000.00,
+          "transactionDesc": "Travel Booking"
+        }
+      ]
+    },
+    {
+      "creditCardId": 3,
+      "transactions": [
+        {
+          "transactionId": "7884806137",
+          "transactionDate": "2024-09-15T08:00:00.000+00:00",
+          "transactionTime": "8:00 AM",
+          "transactionType": "db",
+          "transactionAmount": 1200.00,
+          "transactionDesc": "Subscription"
+        },
+        {
+          "transactionId": "7884806138",
+          "transactionDate": "2024-09-20T16:45:00.000+00:00",
+          "transactionTime": "4:45 PM",
+          "transactionType": "cr",
+          "transactionAmount": 2000.00,
+          "transactionDesc": "Refund"
+        },
+        {
+          "transactionId": "7884806139",
+          "transactionDate": "2024-10-01T10:20:00.000+00:00",
+          "transactionTime": "10:20 AM",
+          "transactionType": "db",
+          "transactionAmount": 600.00,
+          "transactionDesc": "Food Delivery"
+        },
+        {
+          "transactionId": "7884806140",
+          "transactionDate": "2024-10-15T15:10:00.000+00:00",
+          "transactionTime": "3:10 PM",
+          "transactionType": "cr",
+          "transactionAmount": 800.00,
+          "transactionDesc": "Gift Purchase"
+        },
+        {
+          "transactionId": "7884806141",
+          "transactionDate": "2024-10-20T19:30:00.000+00:00",
+          "transactionTime": "7:30 PM",
+          "transactionType": "db",
+          "transactionAmount": 50.00,
+          "transactionDesc": "Coffee Shop"
+        }
+      ]
+    }
+  ]
+}
