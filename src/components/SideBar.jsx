@@ -1,16 +1,15 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import HomeIcon from "@mui/icons-material/Home";
-import AddCardIcon from "@mui/icons-material/AddCard";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import SettingsIcon from "@mui/icons-material/Settings";
 import InfoIcon from "@mui/icons-material/Info";
+import { useAuth } from '../handlers/AuthContext';
 
 const siderItems = [
     { text: 'Home', key: 'home', icon: <HomeIcon /> },
-    { text: 'Add Card', key: 'addcard', icon: <AddCardIcon /> },
+    // { text: 'Add Card', key: 'addcard', icon: <AddCardIcon /> },
     { text: 'Manage Card', key: 'managecard', icon: <CreditCardIcon /> },
     { text: 'Transactions', key: 'transactions', icon: <ReceiptIcon /> },
     { text: 'Profile', key: 'profile', icon: <SettingsIcon /> },
@@ -18,6 +17,15 @@ const siderItems = [
 ];
 
 const Sidebar = () => {
+    const { loggedInUser } = useAuth()
+    // var sidebarItems = []
+    // if (!loggedInUser) {
+    //     sidebarItems = siderItems.find(item => { item.key.match(/home|about/g) })
+    // } else {
+    //     sidebarItems = siderItems
+    // }
+    // console.log(sidebarItems)
+
     return (
         <Box
             sx={{

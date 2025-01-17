@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
-    AppBar, Avatar, Box, CssBaseline, Drawer, IconButton, Menu, MenuItem, styled, Toolbar, Typography,
+    AppBar, Avatar, Box, CssBaseline, Drawer, IconButton, Menu, MenuItem, styled, Toolbar, Typography, Button
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Footer from './Footer.jsx';
-import {Outlet} from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import Sidebar from "./SideBar.jsx";
+
+import { useAuth } from '../handlers/AuthContext'; // Custom Auth hook for context
+import Header from './Header.jsx';
 
 const DRAWER_WIDTH = 240;
 
@@ -25,6 +28,8 @@ function Layout() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
 
+    const { loggedInUser, logout } = useAuth(); // Use auth context to get login state and logout function
+
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -37,12 +42,12 @@ function Layout() {
         setAnchorEl(null);
     };
 
+    const drawer = (
+        <Box
     const handleLogout = () => {
         alert('Logged out!');
         handleMenuClose();
     };
-
-    const drawer = (<Box
             sx={{
                 p: 3, width: DRAWER_WIDTH, display: 'flex', flexDirection: 'column', alignItems: 'center', // Adjust alignment based on collapsed state
                 height: '100%', boxSizing: 'border-box', // Ensure padding is included in the width
@@ -62,13 +67,19 @@ function Layout() {
 
             {/* Sidebar Items */}
             <Box>
-                <Sidebar/>
+                <Sidebar />
             </Box>
         </Box>);
 
     return (
-        <Box sx={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
-            <CssBaseline/>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            height: 'auto',
+            minHeight: '100vh'// Full viewport height
+        }}>
+            <CssBaseline />
+
             <AppBar
                 position="fixed"
                 sx={{
@@ -81,75 +92,128 @@ function Layout() {
                     }),
                 }}
             >
-                <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    {/* Menu Button for Mobile */}
                     <IconButton
                         color="inherit"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{mr: 2, display: {sm: 'none'}}}
+                        sx={{ mr: 2, display: { xs: 'block', sm: 'block', md: 'block', lg: 'block', xl: 'block' }, }}
                     >
-                        <MenuIcon/>
+                        <MenuIcon />
                     </IconButton>
 
-                    <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: 1}}>
+                    {/* Logo Image and Title */}
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}>
                         <img
                             src="../src/assets/cardIcon.png"
                             alt="CardMaster Logo"
-                            style={{height: 40, marginRight: 8}}
+                            style={{ height: 40, marginRight: 8 }}
                         />
-                        <Typography variant="h6" noWrap>
+                        <Typography variant="h6" component={Link} to="/home" sx={{ color: "white" }} noWrap>
                             Walmart CardMaster
                         </Typography>
                     </Box>
                     <Box>
                         <IconButton onClick={handleProfileMenuOpen}>
                             <Avatar>
-                                <AccountCircleIcon/>
+                                <AccountCircleIcon />
                             </Avatar>
                         </IconButton>
-                        <Menu
-                            anchorEl={anchorEl}
-                            open={Boolean(anchorEl)}
-                            onClose={handleMenuClose}
-                        >
-                            <MenuItem key="profile" onClick={handleMenuClose} sx={{color: 'grey.700'}}>
-                                Profile
-                            </MenuItem>
-                            <MenuItem key="logout" onClick={handleLogout} sx={{color: 'grey.700'}}>
-                                Logout
-                                <LogoutIcon fontSize="small" sx={{ml: 1}}/>
-                            </MenuItem>
-                        </Menu>
+
+                        {!loggedInUser ? (
+                            <Menu
+                                anchorEl={anchorEl}
+                                open={Boolean(anchorEl)}
+                                onClose={handleMenuClose}
+                            >
+                                <MenuItem
+                                    key="login"
+                                    component={Link}
+                                    to="/login"
+                                    sx={{ color: 'grey.700' }} // Adjust text color for "Profile"
+                                >
+                                    Login
+                                </MenuItem>
+                                <MenuItem
+                                    key="signup"
+                                    component={Link}
+                                    to="/signup"
+                                    sx={{ color: 'grey.700' }} // Adjust text color for "Logout"
+                                >
+                                    SignUp
+                                    <LogoutIcon fontSize="small" sx={{ ml: 1 }} />
+                                </MenuItem>
+                            </Menu>
+                        ) :
+                            <Menu
+                                anchorEl={anchorEl}
+                                open={Boolean(anchorEl)}
+                                onClose={handleMenuClose}
+                            >
+                                <MenuItem
+                                    key="profile"
+                                    component={Link}
+                                    to="/profile"
+                                    sx={{ color: 'grey.700' }} // Adjust text color for "Profile"
+                                >
+                                    Profile
+                                </MenuItem>
+                                <MenuItem
+                                    key="logout"
+                                    onClick={logout}
+                                    sx={{ color: 'grey.700' }} // Adjust text color for "Logout"
+                                >
+                                    Logout
+                                    <LogoutIcon fontSize="small" sx={{ ml: 1 }} />
+                                </MenuItem>
+                            </Menu>
+                        }
+
                     </Box>
                 </Toolbar>
-            </AppBar>
+            </AppBar >
 
+
+            {/* Sidebar for larger screens */}
             <Box sx={{ display: 'flex', flexGrow: 1 }}>
                 <Drawer
-                    variant="permanent"
-                    sx={{
-                        display: {xs: 'none', sm: 'block'}, width: DRAWER_WIDTH, flexShrink: 0, '& .MuiDrawer-paper': {
-                            width: DRAWER_WIDTH, boxSizing: 'border-box', boxShadow: '2px 0 5px rgba(0, 0, 0, 0.2)',
-                        },
-                    }}
-                    open // Always open for permanent drawer
-                >
-                    {drawer}
-                </Drawer>
+                variant="persistent"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                sx={{
+                    display: { xs: 'none', sm: 'block' },
+                    width: DRAWER_WIDTH,
+                    flexShrink: 0,
+                    '& .MuiDrawer-paper': {
+                        width: DRAWER_WIDTH,
+                        boxSizing: 'border-box',
+                        boxShadow: '2px 0 5px rgba(0, 0, 0, 0.2)', // Shadow for sidebar
+                    },
+                }}
+            >
+                {drawer}
+            </Drawer>
 
-                <Drawer
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{keepMounted: true}}
-                    sx={{
-                        display: {xs: 'block', sm: 'none'}, '& .MuiDrawer-paper': {
-                            width: DRAWER_WIDTH, boxSizing: 'border-box', boxShadow: '2px 0 5px rgba(0, 0, 0, 0.2)',
-                        },
-                    }}
-                >
-                    {drawer}
-                </Drawer>
+            {/* Sidebar for smaller screens */}
+            <Drawer
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                ModalProps={{
+                    keepMounted: true, // Better open performance on mobile.
+                }}
+                sx={{
+                    display: { xs: 'block', sm: 'none' },
+                    '& .MuiDrawer-paper': {
+                        width: DRAWER_WIDTH,
+                        boxSizing: 'border-box',
+                        boxShadow: '2px 0 5px rgba(0, 0, 0, 0.2)', // Shadow for mobile sidebar
+                    },
+                }}
+            >
+                {drawer}
+            </Drawer>
 
                 {/* Main Content */}
                 <Main open={mobileOpen}>

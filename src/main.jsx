@@ -3,13 +3,16 @@ import { createRoot } from 'react-dom/client'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './index.css'
 import App from './App.jsx'
+import { AuthProvider } from './handlers/AuthContext.jsx'
 
 const theme = createTheme();
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-      <ThemeProvider theme={theme}>
-    <App />
-          </ThemeProvider>
+  <AuthProvider>
+    <StrictMode>
+  <ThemeProvider theme={theme}>
+      <App />
   </StrictMode>,
+    </StrictMode>
+  </AuthProvider>
 )
