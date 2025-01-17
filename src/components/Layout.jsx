@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import {
-    AppBar,
-    Avatar,
-    Box,
-    CssBaseline,
-    Drawer,
-    IconButton,
-    Menu,
-    MenuItem,
-    Toolbar,
-    Typography,
-    Button
+    AppBar, Avatar, Box, CssBaseline, Drawer, IconButton, Menu, MenuItem, styled, Toolbar, Typography, Button
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -23,6 +13,16 @@ import { useAuth } from '../handlers/AuthContext'; // Custom Auth hook for conte
 import Header from './Header.jsx';
 
 const DRAWER_WIDTH = 240;
+
+const Main = styled('main', {shouldForwardProp: (prop) => prop !== 'open'})(({theme, open}) => ({
+    flexGrow: 1, padding: theme.spacing(3), transition: theme.transitions.create('margin', {
+        easing: theme.transitions.easing.sharp, duration: theme.transitions.duration.leavingScreen,
+    }), marginLeft: 0, [theme.breakpoints.up('sm')]: {
+        marginLeft: open ? DRAWER_WIDTH : 0,
+    },
+}),);
+
+const AppBarOffset = styled('div')(({theme}) => theme.mixins.toolbar);
 
 function Layout() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -44,14 +44,13 @@ function Layout() {
 
     const drawer = (
         <Box
+    const handleLogout = () => {
+        alert('Logged out!');
+        handleMenuClose();
+    };
             sx={{
-                p: 3,
-                width: DRAWER_WIDTH,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center', // Adjust alignment based on collapsed state
-                height: '100%',
-                boxSizing: 'border-box', // Ensure padding is included in the width
+                p: 3, width: DRAWER_WIDTH, display: 'flex', flexDirection: 'column', alignItems: 'center', // Adjust alignment based on collapsed state
+                height: '100%', boxSizing: 'border-box', // Ensure padding is included in the width
             }}
         >
             {/* Sidebar Header */}
@@ -60,8 +59,7 @@ function Layout() {
                 component="div"
                 gutterBottom
                 sx={{
-                    textAlign: 'center',
-                    mb: 3, // Add some spacing below the header
+                    textAlign: 'center', mb: 3, // Add some spacing below the header
                 }}
             >
                 Sidebar
@@ -71,24 +69,27 @@ function Layout() {
             <Box>
                 <Sidebar />
             </Box>
-        </Box>
-    );
-
+        </Box>);
 
     return (
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            height: 'auto', // Full viewport height
+            height: 'auto',
+            minHeight: '100vh'// Full viewport height
         }}>
             <CssBaseline />
 
-            {/* Header */}
             <AppBar
                 position="fixed"
                 sx={{
                     zIndex: (theme) => theme.zIndex.drawer + 1,
-                    background: 'linear-gradient(90deg, #064f8e 0%, #0071ce 100%)', // Gradient color
+                    background: 'linear-gradient(90deg, #064f8e 0%, #0071ce 100%)',
+                    transition: (theme) => theme.transitions.create(['margin', 'width'], {
+                        easing: theme.transitions.easing.sharp, duration: theme.transitions.duration.leavingScreen,
+                    }), ...(mobileOpen && { // Add mobile open style
+                        width: `calc(100% - ${DRAWER_WIDTH}px)`, marginLeft: `${DRAWER_WIDTH}px`,
+                    }),
                 }}
             >
                 <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -105,7 +106,7 @@ function Layout() {
                     {/* Logo Image and Title */}
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}>
                         <img
-                            src="../src/assets/cardIcon.png"  // Replace with your image path
+                            src="../src/assets/cardIcon.png"
                             alt="CardMaster Logo"
                             style={{ height: 40, marginRight: 8 }}
                         />
@@ -119,6 +120,7 @@ function Layout() {
                                 <AccountCircleIcon />
                             </Avatar>
                         </IconButton>
+
                         {!loggedInUser ? (
                             <Menu
                                 anchorEl={anchorEl}
@@ -167,14 +169,15 @@ function Layout() {
                                 </MenuItem>
                             </Menu>
                         }
+
                     </Box>
                 </Toolbar>
             </AppBar >
 
-            {/* <Header /> */}
 
             {/* Sidebar for larger screens */}
-            <Drawer
+            <Box sx={{ display: 'flex', flexGrow: 1 }}>
+                <Drawer
                 variant="persistent"
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
@@ -212,26 +215,25 @@ function Layout() {
                 {drawer}
             </Drawer>
 
-            {/* Main Content */}
-            <Box sx={{ flexGrow: 1, p: 3 }}>
-                {/* Render Nested Routes Here */}
-                <Outlet />
+                {/* Main Content */}
+                <Main open={mobileOpen}>
+                    <AppBarOffset/> {/* This is the key change */}
+                    <Outlet/>
+                </Main>
             </Box>
 
             {/* Footer */}
-            <Box
-                component="footer"
-                sx={{
-                    p: 0,
-                    mt: 'auto',
-                    color: 'white',
-                    textAlign: 'center',
-                }}
-            >
-                <Footer />
-            </Box>
-        </Box >
-    );
+        <Box
+            component="footer"
+            sx={{
+                p: 0,
+                textAlign: 'center',
+                width: '100%', // Ensure full width
+            }}
+        >
+            <Footer />
+        </Box>
+        </Box>);
 }
 
 export default Layout;

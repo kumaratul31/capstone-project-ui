@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../handlers/AuthContext';
 import { Box, TextField, Button, Typography, Grid } from "@mui/material";
-// import { ThemeProviderAuto } from '../handlers/Theme';
 
 const UserProfile = () => {
 
@@ -70,11 +69,7 @@ const UserProfile = () => {
     };
 
     return (
-        // <ThemeProviderAuto>
         <Box sx={{ maxWidth: 500, margin: "auto", padding: 3, border: "1px solid #ccc", borderRadius: 2, marginTop: "1rem" }}>
-            {/* <Typography variant="h4" gutterBottom>
-                User Profile
-            </Typography> */}
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <TextField
@@ -212,10 +207,7 @@ const UserProfile = () => {
             </Box>
             <Button onClick={routetocards}>Credit Cards</Button>
         </Box>
-        // </ThemeProviderAuto>
     );
 };
-
-//modified code
 
 export default UserProfile;

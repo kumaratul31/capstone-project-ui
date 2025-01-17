@@ -7,13 +7,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AddCard from "./components/pages/addCard.jsx";
 import ManageCard from "./components/pages/manageCard.jsx";
 import Transactions from "./components/pages/transactions.jsx";
-import Profile from "./components/pages/profile.jsx";
 import About from "./components/pages/about.jsx";
 import Login from "./components/pages/login.jsx";
 import SignUp from "./components/pages/signup.jsx";
-
-
 import ProtectedRoute from './handlers/ProtectedRoute.jsx';
+import Profile from "./components/pages/profile.jsx";
+
 
 function App() {
 

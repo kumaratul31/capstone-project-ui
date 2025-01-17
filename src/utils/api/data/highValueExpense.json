@@ -1,0 +1,38 @@
+{
+  "PjJpNKFOtkr18f2X4Xq7GTS2xaZ/GvRXpNn2P+QDLk8l14xn4Xja+QYmULE06gxl": [
+    {
+      "transactionDetail": {
+        "transactionId": 1013283302,
+        "transactionDate": "12/10/2024",
+        "transactionTime": "5:54 AM",
+        "transactionType": "cr",
+        "transactionAmount": 6872.46,
+        "transactionDesc": "Electronics"
+      }
+    }
+  ],
+  "UIg3VyYFSA86Hy+ZKZNZC53I5Rp86Xg+a9V9InuTC60VzOW61+O+cM/6gZNwJfkh": [
+    {
+      "transactionDetail": {
+        "transactionId": 4011816105,
+        "transactionDate": "11/15/2024",
+        "transactionTime": "1:00 PM",
+        "transactionType": "cr",
+        "transactionAmount": 1235.92,
+        "transactionDesc": "Food"
+      }
+    }
+  ],
+  "QJ681fcO7o5ABZg6FXiENx4toBi8cqllUrRRS2MldLafgv+FvRQntgODiKZbqp2/": [
+    {
+      "transactionDetail": {
+        "transactionId": 401181223,
+        "transactionDate": "11/01/2024",
+        "transactionTime": "1:00 PM",
+        "transactionType": "db",
+        "transactionAmount": 125.92,
+        "transactionDesc": "Food"
+      }
+    }
+  ]
+}
