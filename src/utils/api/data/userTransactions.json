@@ -6,6 +6,14 @@
       "creditCardId": 1,
       "transactions": [
         {
+          "transactionId": "7884806456",
+          "transactionDate": "2025-01-13T18:30:00.000+00:00",
+          "transactionTime": "8:15 AM",
+          "transactionType": "cr",
+          "transactionAmount": 240082.03,
+          "transactionDesc": "Clothing"
+        },
+        {
           "transactionId": "7884806127",
           "transactionDate": "2024-06-13T18:30:00.000+00:00",
           "transactionTime": "8:15 AM",

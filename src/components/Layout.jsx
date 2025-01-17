@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import {
-    AppBar, Avatar, Box, CssBaseline, Drawer, IconButton, Menu, MenuItem, styled, Toolbar, Typography, Button
-} from '@mui/material';
+import { useState } from 'react';
+import { AppBar, Avatar, Box, CssBaseline, Drawer, IconButton, Menu, MenuItem, styled, Toolbar, Typography, } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -10,11 +8,10 @@ import { Outlet, Link } from "react-router-dom";
 import Sidebar from "./SideBar.jsx";
 
 import { useAuth } from '../handlers/AuthContext'; // Custom Auth hook for context
-import Header from './Header.jsx';
 
 const DRAWER_WIDTH = 240;
 
-const Main = styled('main', {shouldForwardProp: (prop) => prop !== 'open'})(({theme, open}) => ({
+const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
     flexGrow: 1, padding: theme.spacing(3), transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.sharp, duration: theme.transitions.duration.leavingScreen,
     }), marginLeft: 0, [theme.breakpoints.up('sm')]: {
@@ -22,7 +19,7 @@ const Main = styled('main', {shouldForwardProp: (prop) => prop !== 'open'})(({th
     },
 }),);
 
-const AppBarOffset = styled('div')(({theme}) => theme.mixins.toolbar);
+const AppBarOffset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
 function Layout() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -44,10 +41,6 @@ function Layout() {
 
     const drawer = (
         <Box
-    const handleLogout = () => {
-        alert('Logged out!');
-        handleMenuClose();
-    };
             sx={{
                 p: 3, width: DRAWER_WIDTH, display: 'flex', flexDirection: 'column', alignItems: 'center', // Adjust alignment based on collapsed state
                 height: '100%', boxSizing: 'border-box', // Ensure padding is included in the width
@@ -85,11 +78,6 @@ function Layout() {
                 sx={{
                     zIndex: (theme) => theme.zIndex.drawer + 1,
                     background: 'linear-gradient(90deg, #064f8e 0%, #0071ce 100%)',
-                    transition: (theme) => theme.transitions.create(['margin', 'width'], {
-                        easing: theme.transitions.easing.sharp, duration: theme.transitions.duration.leavingScreen,
-                    }), ...(mobileOpen && { // Add mobile open style
-                        width: `calc(100% - ${DRAWER_WIDTH}px)`, marginLeft: `${DRAWER_WIDTH}px`,
-                    }),
                 }}
             >
                 <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -176,8 +164,8 @@ function Layout() {
 
 
             {/* Sidebar for larger screens */}
-            <Box sx={{ display: 'flex', flexGrow: 1 }}>
-                <Drawer
+            {/* <Box sx={{ display: 'flex', flexGrow: 1 }}> */}
+            <Drawer
                 variant="persistent"
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
@@ -215,24 +203,25 @@ function Layout() {
                 {drawer}
             </Drawer>
 
-                {/* Main Content */}
+            {/* Main Content */}
+            <Box>
                 <Main open={mobileOpen}>
-                    <AppBarOffset/> {/* This is the key change */}
-                    <Outlet/>
+                    <AppBarOffset />
+                    <Outlet />
                 </Main>
             </Box>
 
             {/* Footer */}
-        <Box
-            component="footer"
-            sx={{
-                p: 0,
-                textAlign: 'center',
-                width: '100%', // Ensure full width
-            }}
-        >
-            <Footer />
-        </Box>
+            <Box
+                component="footer"
+                sx={{
+                    p: 0,
+                    textAlign: 'center',
+                    width: '100%', // Ensure full width
+                }}
+            >
+                <Footer />
+            </Box>
         </Box>);
 }
 

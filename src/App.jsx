@@ -28,10 +28,9 @@ function App() {
                     <Route path="/transactions" element={<ProtectedRoute><Transactions /></ProtectedRoute>} />
                     <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
                     <Route path="/about" element={<About />} />
-
-                    <Route path="/login" element={<Login />} />
                 </Route>
                 <Route>
+                    <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<SignUp />} />
                     {/* <Route path="/verify-email" element={<EmailVerification />} /> */}
                 </Route>

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button, TextField, Typography, MenuItem, Box, Container, Avatar, CssBaseline, Snackbar, Alert } from '@mui/material'
 import Grid from '@mui/material/Grid2'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useAuth } from '../../handlers/AuthContext';
 // import { ThemeProviderAuto } from '../../handlers/Theme';
 
@@ -15,7 +15,7 @@ import dayjs from "dayjs";
 
 import { users } from '../../data/users'
 
-// const defaultTheme = createTheme();
+const defaultTheme = createTheme();
 
 
 export default function SignUp() {
@@ -233,8 +233,7 @@ export default function SignUp() {
     };
 
     return (
-        // <ThemeProviderAuto>
-        <>
+        <ThemeProvider theme={defaultTheme}>
             <Header />
             <Container component="main" maxWidth="xs">
                 <Snackbar
@@ -440,8 +439,7 @@ export default function SignUp() {
                 </Box>
             </Container>
             <Footer />
-        </>
-        // </ThemeProviderAuto>
+        </ThemeProvider>
     );
 }
 
