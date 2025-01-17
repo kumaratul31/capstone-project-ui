@@ -7,6 +7,9 @@ const Profile = () => {
             <Typography variant="h3" gutterBottom>
                 User Profile
             </Typography>
+            <p>
+                Team1 to add user profile UI info here...
+            </p>
         </Box>
     );
 };

@@ -15,7 +15,7 @@ To install the Capstone2-UI App, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://gecgithub01.walmart.com/a0k02o0/capstone2-project-ui.git
+git clone  https://github.com/kumaratul31/capstone-project-ui.git
 
 # Go into the repository
 cd capstone2-project-ui

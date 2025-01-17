@@ -7,6 +7,9 @@ const ManageCard = () => {
             <Typography variant="h3" gutterBottom>
                 Manage Card
             </Typography>
+            <p>
+                Team1 to add card view UI here...
+            </p>
         </Box>
     );
 };

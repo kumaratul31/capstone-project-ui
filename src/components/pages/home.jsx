@@ -5,11 +5,15 @@ import {useNavigate} from "react-router-dom";
 const Home = () => {
     const navigate = useNavigate();
 
+
     return (
         <Box sx={{ textAlign: 'center', mt: 8 }}>
             <Typography variant="h3" gutterBottom>
                 Card Master Home
             </Typography>
+            <p>
+                Team2 to add Top 10 transactions from all Cards here...
+            </p>
         </Box>
     );
 };
