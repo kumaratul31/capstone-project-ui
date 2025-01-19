@@ -57,10 +57,21 @@ or
 http://localhost:5173
 
 ```
-## 🔗 Links
+
+## 🔗 Profile Links(UI)
 [![AtulK](https://img.shields.io/badge/kumaratul31-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/AtulK)
 [![KarthiG](https://img.shields.io/badge/KarthikGgit-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/KarthikGgit)
-[![Atul160](https://img.shields.io/badge/Atul160-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Atul160)
+[![Atul160](https://img.shields.io/badge/KarthikGgit-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Atul160)
+[![stcm](https://img.shields.io/badge/linuxcloudadmin-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/linuxcloudadmin/ccmv1)
+
+
+## Reference Source Links
+https://github.com/pv-prog/capstoneProject
+https://github.com/KarthikGgit/capstoneteam2-backend
+https://github.com/Atul160/capstone-team1
+https://github.com/RamReddychalla/capstone-project-ui
+https://github.com/AdarshonCloud/PGP_Team3_Capstone
+https://github.com/linuxcloudadmin/ccmv1
 
 
 
