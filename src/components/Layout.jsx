@@ -11,13 +11,21 @@ import { useAuth } from '../handlers/AuthContext'; // Custom Auth hook for conte
 
 const DRAWER_WIDTH = 240;
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
-    flexGrow: 1, padding: theme.spacing(3), transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.sharp, duration: theme.transitions.duration.leavingScreen,
-    }), marginLeft: 0, [theme.breakpoints.up('sm')]: {
-        marginLeft: open ? DRAWER_WIDTH : 0,
-    },
-}),);
+const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
+    ({ theme, open }) => ({
+        flexGrow: 1,
+        padding: theme.spacing(3),
+        transition: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+        marginLeft: 0,
+        overflowY: 'auto', // Add this to make Main scrollable
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: open ? DRAWER_WIDTH : 0,
+        },
+    }),
+);
 
 const AppBarOffset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -62,14 +70,14 @@ function Layout() {
             <Box>
                 <Sidebar />
             </Box>
-        </Box>);
+        </Box>
+    );
 
     return (
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            height: 'auto',
-            minHeight: '100vh'// Full viewport height
+            height: 'auto'
         }}>
             <CssBaseline />
 
@@ -119,7 +127,7 @@ function Layout() {
                                     key="login"
                                     component={Link}
                                     to="/login"
-                                    sx={{ color: 'grey.700' }} // Adjust text color for "Profile"
+                                    sx={{ color: 'grey.700' }}
                                 >
                                     Login
                                 </MenuItem>
@@ -127,7 +135,7 @@ function Layout() {
                                     key="signup"
                                     component={Link}
                                     to="/signup"
-                                    sx={{ color: 'grey.700' }} // Adjust text color for "Logout"
+                                    sx={{ color: 'grey.700' }}
                                 >
                                     SignUp
                                     <LogoutIcon fontSize="small" sx={{ ml: 1 }} />
@@ -143,14 +151,14 @@ function Layout() {
                                     key="profile"
                                     component={Link}
                                     to="/profile"
-                                    sx={{ color: 'grey.700' }} // Adjust text color for "Profile"
+                                    sx={{ color: 'grey.700' }}
                                 >
                                     Profile
                                 </MenuItem>
                                 <MenuItem
                                     key="logout"
                                     onClick={logout}
-                                    sx={{ color: 'grey.700' }} // Adjust text color for "Logout"
+                                    sx={{ color: 'grey.700' }}
                                 >
                                     Logout
                                     <LogoutIcon fontSize="small" sx={{ ml: 1 }} />
@@ -164,7 +172,6 @@ function Layout() {
 
 
             {/* Sidebar for larger screens */}
-            {/* <Box sx={{ display: 'flex', flexGrow: 1 }}> */}
             <Drawer
                 variant="persistent"
                 open={mobileOpen}
@@ -185,7 +192,7 @@ function Layout() {
 
             {/* Sidebar for smaller screens */}
             <Drawer
-                variant="temporary"
+                variant="persistent"
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
                 ModalProps={{
@@ -209,18 +216,6 @@ function Layout() {
                     <AppBarOffset />
                     <Outlet />
                 </Main>
-            </Box>
-
-            {/* Footer */}
-            <Box
-                component="footer"
-                sx={{
-                    p: 0,
-                    textAlign: 'center',
-                    width: '100%', // Ensure full width
-                }}
-            >
-                <Footer />
             </Box>
         </Box>);
 }

@@ -9,7 +9,7 @@ export const getCardVendorStyle = (type) => {
         case "american express":
             return {
                 background: "linear-gradient(to right, #CDAD61, #986928)", // Golden gradient
-                color: "#000", // Black text for contrast
+                color: "#ffffff", // Black text for contrast
             };
         case "visa":
             return {

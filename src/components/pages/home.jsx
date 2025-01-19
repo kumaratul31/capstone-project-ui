@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getTransactionData, signUpCustomer } from "../../utils/api/team1";
 import { getHighValueExpenses, getLastMonthMaxExpense, getLastXExpenses, getLastXTransactions, getUserData, getCreditCardData, addCreditCard } from "../../utils/api/team2";
 import { deleteCreditCard, loginCustomer } from "../../utils/api/team3";
+import Footer from "../Footer.jsx";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -23,6 +24,11 @@ const Home = () => {
 
 
             <Button onClick={getTransactionData}>TransactionData</Button>
+
+            {/* Footer */}
+            <Box component="footer" sx={{ p: 2, textAlign: 'center', width: '100%' }}> {/* Key change 2 */}
+                <Footer />
+            </Box>
 
         </Box>
     );

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../handlers/AuthContext';
 import { Box, TextField, Button, Typography, Grid } from "@mui/material";
+import Footer from "../Footer.jsx";
 
 const UserProfile = () => {
 
@@ -69,6 +70,7 @@ const UserProfile = () => {
     };
 
     return (
+        <>
         <Box sx={{ maxWidth: 500, margin: "auto", padding: 3, border: "1px solid #ccc", borderRadius: 2, marginTop: "1rem" }}>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
@@ -207,6 +209,11 @@ const UserProfile = () => {
             </Box>
             <Button onClick={routetocards}>Credit Cards</Button>
         </Box>
+            {/* Footer */}
+            <Box component="footer" sx={{ p: 2, textAlign: 'center', width: '100%' }}> {/* Key change 2 */}
+                <Footer />
+            </Box>
+        </>
     );
 };
 

@@ -87,19 +87,6 @@ const AddCreditCard = ({ open, onClose, onAddCard, existingCards }) => {
                 }
             }
 
-            // Validate Valid From
-            if (name === "valid_from") {
-                if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(formattedValue)) {
-                    errors.valid_from = "Expiry must be in MM/YY format.";
-                }
-
-                const [month, year] = formattedValue.split("/").map(Number);
-                console.log(year, currentYear, month, currentMonth)
-                if (year > currentYear || (year === currentYear && month > currentMonth)) {
-                    errors.valid_from = "Issue date must be in the past"
-                }
-            }
-
             setFormData({ ...formData, [name]: formattedValue });
 
         }
@@ -113,7 +100,7 @@ const AddCreditCard = ({ open, onClose, onAddCard, existingCards }) => {
     const validateForm = () => {
         const newErrors = {}
         Object.keys(errors).forEach(item => {
-            if (errors[item] != "") {
+            if (errors[item] !== "") {
                 newErrors[item] = errors[item]
             }
         })
@@ -146,6 +133,7 @@ const AddCreditCard = ({ open, onClose, onAddCard, existingCards }) => {
             <DialogContent>
                 <Box component="form" noValidate>
                     <TextField
+                        size="medium"
                         fullWidth
                         margin="normal"
                         label="Card Number"
@@ -165,16 +153,6 @@ const AddCreditCard = ({ open, onClose, onAddCard, existingCards }) => {
                         onChange={handleInputChange}
                         helperText={errors.nameOnCard}
                         error={!!errors.nameOnCard}
-                    />
-                    <TextField
-                        fullWidth
-                        margin="normal"
-                        label="Valid From (MM/YY)"
-                        name="valid_from"
-                        value={formData.valid_from}
-                        onChange={handleInputChange}
-                        helperText={errors.valid_from}
-                        error={!!errors.valid_from}
                     />
                     <TextField
                         fullWidth
@@ -201,7 +179,7 @@ const AddCreditCard = ({ open, onClose, onAddCard, existingCards }) => {
                         required
                         fullWidth
                         margin="normal"
-                        label="wireTransactionVendor"
+                        label="Vendor"
                         name="wireTransactionVendor"
                         select
                         value={formData.wireTransactionVendor}

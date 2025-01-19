@@ -15,6 +15,7 @@ import masterCardIcon from '../../assets/icons/mastercard.png';
 import rupayIcon from '../../assets/icons/rupay.png';
 import amexIcon from '../../assets/icons/american-express.png';
 import defaultIcon from '../../assets/icons/default.png';
+import Footer from "../Footer.jsx";
 
 
 const ManageCard = () => {
@@ -318,6 +319,11 @@ const ManageCard = () => {
                 onAddCard={handleAddCard}
                 existingCards={userCardsData.credit_card.map((card) => card.cardNumber)}
             />
+
+            {/* Footer */}
+            <Box component="footer" sx={{ p: 2, textAlign: 'center', width: '100%' }}> {/* Key change 2 */}
+                <Footer />
+            </Box>
         </>
     );
 };
