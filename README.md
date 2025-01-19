@@ -66,12 +66,12 @@ http://localhost:5173
 
 
 ## Reference Source Links
-https://github.com/pv-prog/capstoneProject \n
-https://github.com/KarthikGgit/capstoneteam2-backend
-https://github.com/Atul160/capstone-team1
-https://github.com/RamReddychalla/capstone-project-ui
-https://github.com/AdarshonCloud/PGP_Team3_Capstone
-https://github.com/linuxcloudadmin/ccmv1
+- https://github.com/pv-prog/capstoneProject <br />
+- https://github.com/KarthikGgit/capstoneteam2-backend <br />
+- https://github.com/Atul160/capstone-team1 <br />
+- https://github.com/RamReddychalla/capstone-project-ui <br />
+- https://github.com/AdarshonCloud/PGP_Team3_Capstone <br />
+- https://github.com/linuxcloudadmin/ccmv1 <br />
 
 
 
