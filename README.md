@@ -1,39 +1,67 @@
+
 # Credit Card Management System
 
-## Capstone2-UI
+Capstone2-UI for CreditCard Management System for Ascend
 
-### Prerequisites
 
-Before you begin, ensure you have met the following requirements:
 
-* You have installed the latest version of `Node.js and npm`
-* You have a `Windows/Mac/Linux` machine.
 
-### Installing Capstone2-UI App
+## Authors
 
-To install the Capstone2-UI App, follow these steps:
+- Atul Kumar
+- Atul Pahlazani
+- Karthik G
+- Sudharshan TCM
+- Venkata Rami Reddy
+- Lingaraj Lingraj Sembelle
+ 
 
-```bash
+## Deployment
+
+To deploy this project run
+
 # Clone the repository
+```bash
 git clone  https://github.com/kumaratul31/capstone-project-ui.git
+```
 
 # Go into the repository
+```bash
 cd capstone2-project-ui
+```
+
 
 # Install dependencies
+```bash
 npm install
 ```
 
-### Using App UI
 
-To use Capstone2-UI App, follow these steps:
+## Run Locally
+
+
 
 ```bash
-# Run the app in development mode
-npm run dev
-
-# Open the link in your browser
-http://localhost:3000 
-OR
-http://localhost:5173
+  npm run dev
 ```
+
+
+## From Browser UI
+```bash
+http://localhost:3000 
+
+```
+
+or
+```
+http://localhost:5173
+
+```
+## 🔗 Links
+[![AtulK](https://img.shields.io/badge/kumaratul31-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/AtulK)
+[![KarthiG](https://img.shields.io/badge/KarthikGgit-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/KarthikGgit)
+[![Atul160](https://img.shields.io/badge/KarthikGgit-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Atul160)
+
+
+
+
