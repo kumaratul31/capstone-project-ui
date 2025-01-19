@@ -61,7 +61,7 @@ http://localhost:5173
 ## 🔗 Profile Links(UI)
 [![AtulK](https://img.shields.io/badge/kumaratul31-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/AtulK)
 [![KarthiG](https://img.shields.io/badge/KarthikGgit-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/KarthikGgit)
-[![Atul160](https://img.shields.io/badge/KarthikGgit-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Atul160)
+[![Atul160](https://img.shields.io/badge/Atul160-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Atul160)
 [![stcm](https://img.shields.io/badge/linuxcloudadmin-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/linuxcloudadmin/ccmv1)
 
 
