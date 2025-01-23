@@ -19,14 +19,15 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
-        marginLeft: 0,
-        overflowY: 'auto', // Add this to make Main scrollable
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: open ? DRAWER_WIDTH : 0,
+        width: `calc(100% - ${open ? DRAWER_WIDTH : 0}px)`, // Adjust width based on drawer state
+        marginLeft: open ? DRAWER_WIDTH : 0, // Apply margin only when drawer is open
+        overflowY: 'auto', // Ensures Main is scrollable
+        [theme.breakpoints.down('sm')]: {
+            width: '100%', // Full width on mobile
+            marginLeft: 0, // No margin for mobile view
         },
     }),
 );
-
 const AppBarOffset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
 function Layout() {

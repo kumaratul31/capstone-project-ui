@@ -13,7 +13,7 @@ export const getCardVendorStyle = (type) => {
             };
         case "visa":
             return {
-                background: "linear-gradient(to right, #374151, #111827)", // Black background
+                background: "linear-gradient(to right, #60a5fa, #1e40af)", // Black background
                 color: "#FFF", // White text
             };
         case "mastercard":
@@ -23,7 +23,7 @@ export const getCardVendorStyle = (type) => {
             };
         case "rupay":
             return {
-                background: "linear-gradient(to right, #800020, #400010)", // Wine red gradient
+                background: "linear-gradient(to right, #f87171, #991b1b)", // Wine red gradient
                 color: "#FFF", // White text
             };
         default:

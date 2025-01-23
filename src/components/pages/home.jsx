@@ -1,29 +1,39 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Typography, Box, Button } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import { getTransactionData, signUpCustomer } from "../../utils/api/team1";
-import { getHighValueExpenses, getLastMonthMaxExpense, getLastXExpenses, getLastXTransactions, getUserData, getCreditCardData, addCreditCard } from "../../utils/api/team2";
+import {
+    getHighValueExpenses,
+    getLastMonthMaxExpense,
+    getLastXExpenses,
+    getLastXTransactions,
+    getUserData,
+    getCreditCardData,
+    addCreditCard, getTransactions
+} from "../../utils/api/team2";
 import { deleteCreditCard, loginCustomer } from "../../utils/api/team3";
 import Footer from "../Footer.jsx";
 
 const Home = () => {
-    const navigate = useNavigate();
-    let numberOfCards = getCreditCardData().creditcards.length;
-    const currentmonth = new Date().getMonth() + 1;
-    const transactionsData = getTransactionData();
-    const sampledate = new Date(transactionsData.creditcards[0].transactions[0].transactionDate)
+    const [creditCardData, setCreditCardData] = useState(null);
+    useEffect( () => {
+        async function fetchData() {
+            const creditCards = await getCreditCardData('a2FydGhpa2c=', false);
+            setCreditCardData(creditCards);
+        }
+        fetchData();
+    }, []);
 
-    console.log(currentmonth, sampledate)
+    const numberOfCards = creditCardData?.creditcards.length;
 
     return (
         <Box sx={{ textAlign: 'center', mt: 8 }}>
             <Typography variant="h3" gutterBottom>
                 Card Master Home
             </Typography>
+
             <p>Number of Cards: {numberOfCards}</p>
 
-
-            <Button onClick={getTransactionData}>TransactionData</Button>
 
             {/* Footer */}
             <Box component="footer" sx={{ p: 2, textAlign: 'center', width: '100%' }}> {/* Key change 2 */}
