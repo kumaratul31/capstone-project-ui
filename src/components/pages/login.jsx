@@ -65,7 +65,7 @@ export default function Login() {
             if (auth) {
                 console.log('Login successful');
                 // console.log(auth)
-                navigate('/profile')
+                navigate('/home')
             }
             else { alert("Authentication Failed") }
         }

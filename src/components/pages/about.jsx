@@ -1,5 +1,6 @@
 import React from 'react';
 import {Box, Typography} from '@mui/material';
+import Footer from "../Footer.jsx";
 
 const About = () => {
     return (
@@ -40,8 +41,12 @@ const About = () => {
                 4. When login, the password should not be sent over the network 5<br />
                 5. When customer wants to view last x number of expenses of all cards 5
             </Typography>
-          
- 
+
+
+            {/* Footer */}
+            <Box component="footer" sx={{ p: 2, textAlign: 'center', width: '100%' }}> {/* Key change 2 */}
+                <Footer />
+            </Box>
 
         </Box>
 
