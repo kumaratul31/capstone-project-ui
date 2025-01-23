@@ -185,7 +185,7 @@ function Layout() {
 
             {/* Sidebar for smaller screens */}
             <Drawer
-                variant="temporary"
+                variant="persistent" // "temporary"
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
                 ModalProps={{

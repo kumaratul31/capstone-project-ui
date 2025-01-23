@@ -243,17 +243,13 @@ const ManageCard = () => {
 
                             {/* Valid From and Expiry */}
                             <Grid container spacing={1} sx={{ marginTop: { xs: "1", sm: "2" }, alignItems: "center", textAlign: "center" }}>
-                                <Grid item size={3}>
-                                    <Typography variant="body2" sx={{ fontSize: { xs: ".8rem", sm: ".9rem" } }} >Valid From</Typography>
-                                    <Typography variant="body1" sx={{ fontWeight: "bold", fontSize: { xs: ".8rem", sm: ".9rem" } }}>{card.valid_from}</Typography>
-                                </Grid>
-                                <Grid item size={5}>
+                                <Grid item size={2}>
                                     <Typography variant="body2" sx={{ fontSize: { xs: ".8rem", sm: ".9rem" } }}>Expiry</Typography>
                                     <Typography variant="body1" sx={{ fontWeight: "bold", fontSize: { xs: ".8rem", sm: ".9rem" } }}>{card.expiry}</Typography>
                                 </Grid>
 
                                 {/* CVV and Toggle Button */}
-                                <Grid item size={1}>
+                                <Grid item size={2}>
                                     <Typography variant="body2" sx={{ fontSize: { xs: ".8rem", sm: ".9rem" } }}>{"CVV"}
                                     </Typography>
                                     <Typography variant="body1" sx={{ fontWeight: "bold", fontSize: { xs: ".8rem", sm: ".9rem" } }}>

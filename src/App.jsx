@@ -1,7 +1,5 @@
 import './App.css'
 import Layout from "./components/Layout.jsx";
-import Footer from "./components/Footer.jsx"
-import Header from "./components/Header.jsx";
 import Home from "./components/pages/home.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AddCard from "./components/pages/addCard.jsx";
@@ -21,8 +19,8 @@ function App() {
             <Routes>
                 {/* Public Routes */}
                 <Route element={<Layout />}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/home" element={<Home />} />
+                    <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+                    <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
                     <Route path="/addcard" element={<ProtectedRoute><AddCard /></ProtectedRoute>} />
                     <Route path="/managecard" element={<ProtectedRoute><ManageCard /></ProtectedRoute>} />
                     <Route path="/transactions" element={<ProtectedRoute><Transactions /></ProtectedRoute>} />
